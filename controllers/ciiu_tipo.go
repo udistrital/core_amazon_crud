@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"github.com/udistrital/core_api/models"
+	"github.com/udistrital/core_amazon_crud/models"
 	"encoding/json"
 	"errors"
 	"strings"

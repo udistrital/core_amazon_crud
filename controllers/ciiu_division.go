@@ -3,7 +3,7 @@ package controllers
 import (
 	"encoding/json"
 	"errors"
-	"github.com/udistrital/core_api/models"
+	"github.com/udistrital/core_amazon_crud/models"
 	"strings"
 	"github.com/astaxie/beego"
 )
