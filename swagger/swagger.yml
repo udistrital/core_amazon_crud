@@ -566,6 +566,117 @@ paths:
           description: '{string} delete success!'
         "403":
           description: id is empty
+  /ciudad/:
+    get:
+      tags:
+      - ciudad
+      description: get Ciudad
+      operationId: CiudadController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.Ciudad'
+        "403": {}
+    post:
+      tags:
+      - ciudad
+      description: create Ciudad
+      operationId: CiudadController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Ciudad content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Ciudad'
+      responses:
+        "201":
+          description: '{int} models.Ciudad'
+        "403":
+          description: body is empty
+  /ciudad/{id}:
+    get:
+      tags:
+      - ciudad
+      description: get Ciudad by id
+      operationId: CiudadController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.Ciudad'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - ciudad
+      description: update the Ciudad
+      operationId: CiudadController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Ciudad content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Ciudad'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.Ciudad'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - ciudad
+      description: delete the Ciudad
+      operationId: CiudadController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
   /jefe_dependencia/:
     get:
       tags:
@@ -1849,6 +1960,37 @@ definitions:
         type: string
       Nombre:
         type: string
+  models.Ciudad:
+    title: Ciudad
+    type: object
+    properties:
+      AbPais:
+        type: string
+      Abreviatura:
+        type: string
+      Departamento:
+        type: string
+      Descripcion:
+        type: string
+      Estado:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      IdDepartamento:
+        type: integer
+        format: int64
+      Latitud:
+        type: number
+        format: double
+      Longitud:
+        type: number
+        format: double
+      Nombre:
+        type: string
+      Poblacion:
+        type: integer
+        format: int64
   models.JefeDependencia:
     title: JefeDependencia
     type: object
@@ -2058,3 +2200,6 @@ tags:
 - name: tipo_documento
   description: |
     TipoDocumentoController operations for TipoDocumento
+- name: ciudad
+  description: |
+    CiudadController oprations for Ciudad
