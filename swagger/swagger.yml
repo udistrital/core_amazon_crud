@@ -45,9 +45,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Banco'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - banco
@@ -79,6 +81,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Banco'
         "403":
@@ -102,6 +105,7 @@ paths:
           $ref: '#/definitions/models.Banco'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Banco'
         "403":
@@ -156,9 +160,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuClase'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - ciiu_clase
@@ -190,6 +196,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuClase'
         "403":
@@ -213,6 +220,7 @@ paths:
           $ref: '#/definitions/models.CiiuClase'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuClase'
         "403":
@@ -267,9 +275,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuDivision'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - ciiu_division
@@ -301,6 +311,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuDivision'
         "403":
@@ -324,6 +335,7 @@ paths:
           $ref: '#/definitions/models.CiiuDivision'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuDivision'
         "403":
@@ -378,9 +390,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuSubclase'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - ciiu_subclase
@@ -412,6 +426,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuSubclase'
         "403":
@@ -435,6 +450,7 @@ paths:
           $ref: '#/definitions/models.CiiuSubclase'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuSubclase'
         "403":
@@ -489,9 +505,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuTipo'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - ciiu_tipo
@@ -523,6 +541,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuTipo'
         "403":
@@ -546,6 +565,7 @@ paths:
           $ref: '#/definitions/models.CiiuTipo'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuTipo'
         "403":
@@ -600,9 +620,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Ciudad'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - ciudad
@@ -634,6 +656,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Ciudad'
         "403":
@@ -657,6 +680,7 @@ paths:
           $ref: '#/definitions/models.Ciudad'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Ciudad'
         "403":
@@ -666,6 +690,121 @@ paths:
       - ciudad
       description: delete the Ciudad
       operationId: CiudadController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /estado/:
+    get:
+      tags:
+      - estado
+      description: get Estado
+      operationId: EstadoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Estado'
+        "403":
+          description: ""
+    post:
+      tags:
+      - estado
+      description: create Estado
+      operationId: EstadoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Estado content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Estado'
+      responses:
+        "201":
+          description: '{int} models.Estado'
+        "403":
+          description: body is empty
+  /estado/{id}:
+    get:
+      tags:
+      - estado
+      description: get Estado by id
+      operationId: EstadoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Estado'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - estado
+      description: update the Estado
+      operationId: EstadoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Estado content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Estado'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Estado'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - estado
+      description: delete the Estado
+      operationId: EstadoController.Delete
       parameters:
       - in: path
         name: id
@@ -711,9 +850,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.JefeDependencia'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - jefe_dependencia
@@ -745,6 +886,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.JefeDependencia'
         "403":
@@ -768,6 +910,7 @@ paths:
           $ref: '#/definitions/models.JefeDependencia'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.JefeDependencia'
         "403":
@@ -822,9 +965,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.OrdenadorGasto'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - ordenador_gasto
@@ -856,6 +1001,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.OrdenadorGasto'
         "403":
@@ -879,6 +1025,7 @@ paths:
           $ref: '#/definitions/models.OrdenadorGasto'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.OrdenadorGasto'
         "403":
@@ -888,6 +1035,121 @@ paths:
       - ordenador_gasto
       description: delete the OrdenadorGasto
       operationId: OrdenadorGastoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /parametro_entidad/:
+    get:
+      tags:
+      - parametro_entidad
+      description: get ParametroEntidad
+      operationId: ParametroEntidadController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ParametroEntidad'
+        "403":
+          description: ""
+    post:
+      tags:
+      - parametro_entidad
+      description: create ParametroEntidad
+      operationId: ParametroEntidadController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for ParametroEntidad content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ParametroEntidad'
+      responses:
+        "201":
+          description: '{int} models.ParametroEntidad'
+        "403":
+          description: body is empty
+  /parametro_entidad/{id}:
+    get:
+      tags:
+      - parametro_entidad
+      description: get ParametroEntidad by id
+      operationId: ParametroEntidadController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ParametroEntidad'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - parametro_entidad
+      description: update the ParametroEntidad
+      operationId: ParametroEntidadController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for ParametroEntidad content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ParametroEntidad'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ParametroEntidad'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - parametro_entidad
+      description: delete the ParametroEntidad
+      operationId: ParametroEntidadController.Delete
       parameters:
       - in: path
         name: id
@@ -933,9 +1195,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.PuntoSalarial'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - punto_salarial
@@ -967,6 +1231,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.PuntoSalarial'
         "403":
@@ -990,6 +1255,7 @@ paths:
           $ref: '#/definitions/models.PuntoSalarial'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.PuntoSalarial'
         "403":
@@ -1044,9 +1310,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.RubrosDependencia'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - rubros_dependencia
@@ -1078,6 +1346,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.RubrosDependencia'
         "403":
@@ -1101,6 +1370,7 @@ paths:
           $ref: '#/definitions/models.RubrosDependencia'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.RubrosDependencia'
         "403":
@@ -1155,9 +1425,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.RubrosOrdenador'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - rubros_ordenador
@@ -1189,6 +1461,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.RubrosOrdenador'
         "403":
@@ -1212,6 +1485,7 @@ paths:
           $ref: '#/definitions/models.RubrosOrdenador'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.RubrosOrdenador'
         "403":
@@ -1266,9 +1540,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SalarioMinimo'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - salario_minimo
@@ -1300,6 +1576,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SalarioMinimo'
         "403":
@@ -1323,6 +1600,7 @@ paths:
           $ref: '#/definitions/models.SalarioMinimo'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SalarioMinimo'
         "403":
@@ -1377,9 +1655,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SniesArea'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - snies_area
@@ -1411,6 +1691,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SniesArea'
         "403":
@@ -1434,6 +1715,7 @@ paths:
           $ref: '#/definitions/models.SniesArea'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SniesArea'
         "403":
@@ -1488,9 +1770,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SniesNucleoBasico'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - snies_nucleo_basico
@@ -1522,6 +1806,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SniesNucleoBasico'
         "403":
@@ -1545,6 +1830,7 @@ paths:
           $ref: '#/definitions/models.SniesNucleoBasico'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SniesNucleoBasico'
         "403":
@@ -1599,9 +1885,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Sucursal'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - sucursal
@@ -1633,6 +1921,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Sucursal'
         "403":
@@ -1656,6 +1945,7 @@ paths:
           $ref: '#/definitions/models.Sucursal'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Sucursal'
         "403":
@@ -1710,9 +2000,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.TipoDocumento'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - tipo_documento
@@ -1744,6 +2036,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.TipoDocumento'
         "403":
@@ -1767,6 +2060,7 @@ paths:
           $ref: '#/definitions/models.TipoDocumento'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.TipoDocumento'
         "403":
@@ -1821,9 +2115,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Tipo_entidad'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - tipo_entidad
@@ -1855,6 +2151,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Tipo_entidad'
         "403":
@@ -1878,6 +2175,7 @@ paths:
           $ref: '#/definitions/models.Tipo_entidad'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Tipo_entidad'
         "403":
@@ -1991,6 +2289,15 @@ definitions:
       Poblacion:
         type: integer
         format: int64
+  models.Estado:
+    title: Estado
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      Id:
+        type: integer
+        format: int64
   models.JefeDependencia:
     title: JefeDependencia
     type: object
@@ -2024,6 +2331,29 @@ definitions:
       Id:
         type: integer
         format: int64
+  models.ParametroEntidad:
+    title: ParametroEntidad
+    type: object
+    properties:
+      CodigoMinisterioSalud:
+        type: string
+      FechaCreacion:
+        type: string
+        format: string
+      FechaModificacion:
+        type: string
+        format: string
+      Id:
+        type: integer
+        format: int64
+      IdEstado:
+        $ref: '#/definitions/models.Estado'
+      IdTipoEntidad:
+        $ref: '#/definitions/models.Tipo_entidad'
+      Nit:
+        type: string
+      Nombre:
+        type: string
   models.PuntoSalarial:
     title: PuntoSalarial
     type: object
@@ -2203,3 +2533,9 @@ tags:
 - name: ciudad
   description: |
     CiudadController oprations for Ciudad
+- name: parametro_entidad
+  description: |
+    ParametroEntidadController operations for ParametroEntidad
+- name: estado
+  description: |
+    EstadoController operations for Estado
