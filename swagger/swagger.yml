@@ -45,11 +45,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.Banco'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - banco
@@ -81,7 +79,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.Banco'
         "403":
@@ -105,7 +102,6 @@ paths:
           $ref: '#/definitions/models.Banco'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.Banco'
         "403":
@@ -160,11 +156,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.CiiuClase'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - ciiu_clase
@@ -196,7 +190,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.CiiuClase'
         "403":
@@ -220,7 +213,6 @@ paths:
           $ref: '#/definitions/models.CiiuClase'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.CiiuClase'
         "403":
@@ -275,11 +267,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.CiiuDivision'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - ciiu_division
@@ -311,7 +301,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.CiiuDivision'
         "403":
@@ -335,7 +324,6 @@ paths:
           $ref: '#/definitions/models.CiiuDivision'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.CiiuDivision'
         "403":
@@ -390,11 +378,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.CiiuSubclase'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - ciiu_subclase
@@ -426,7 +412,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.CiiuSubclase'
         "403":
@@ -450,7 +435,6 @@ paths:
           $ref: '#/definitions/models.CiiuSubclase'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.CiiuSubclase'
         "403":
@@ -505,11 +489,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.CiiuTipo'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - ciiu_tipo
@@ -541,7 +523,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.CiiuTipo'
         "403":
@@ -565,7 +546,6 @@ paths:
           $ref: '#/definitions/models.CiiuTipo'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.CiiuTipo'
         "403":
@@ -620,11 +600,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.Ciudad'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - ciudad
@@ -656,7 +634,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.Ciudad'
         "403":
@@ -680,7 +657,6 @@ paths:
           $ref: '#/definitions/models.Ciudad'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.Ciudad'
         "403":
@@ -735,11 +711,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.Estado'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - estado
@@ -771,7 +745,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.Estado'
         "403":
@@ -795,7 +768,6 @@ paths:
           $ref: '#/definitions/models.Estado'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.Estado'
         "403":
@@ -850,11 +822,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.JefeDependencia'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - jefe_dependencia
@@ -886,7 +856,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.JefeDependencia'
         "403":
@@ -910,7 +879,6 @@ paths:
           $ref: '#/definitions/models.JefeDependencia'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.JefeDependencia'
         "403":
@@ -965,11 +933,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.OrdenadorGasto'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - ordenador_gasto
@@ -1001,7 +967,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.OrdenadorGasto'
         "403":
@@ -1025,7 +990,6 @@ paths:
           $ref: '#/definitions/models.OrdenadorGasto'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.OrdenadorGasto'
         "403":
@@ -1080,11 +1044,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.ParametroEntidad'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - parametro_entidad
@@ -1116,7 +1078,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.ParametroEntidad'
         "403":
@@ -1140,7 +1101,6 @@ paths:
           $ref: '#/definitions/models.ParametroEntidad'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.ParametroEntidad'
         "403":
@@ -1195,11 +1155,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.PuntoSalarial'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - punto_salarial
@@ -1231,7 +1189,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.PuntoSalarial'
         "403":
@@ -1255,7 +1212,6 @@ paths:
           $ref: '#/definitions/models.PuntoSalarial'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.PuntoSalarial'
         "403":
@@ -1310,11 +1266,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.RubrosDependencia'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - rubros_dependencia
@@ -1346,7 +1300,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.RubrosDependencia'
         "403":
@@ -1370,7 +1323,6 @@ paths:
           $ref: '#/definitions/models.RubrosDependencia'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.RubrosDependencia'
         "403":
@@ -1425,11 +1377,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.RubrosOrdenador'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - rubros_ordenador
@@ -1461,7 +1411,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.RubrosOrdenador'
         "403":
@@ -1485,7 +1434,6 @@ paths:
           $ref: '#/definitions/models.RubrosOrdenador'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.RubrosOrdenador'
         "403":
@@ -1540,11 +1488,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.SalarioMinimo'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - salario_minimo
@@ -1576,7 +1522,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.SalarioMinimo'
         "403":
@@ -1600,7 +1545,6 @@ paths:
           $ref: '#/definitions/models.SalarioMinimo'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.SalarioMinimo'
         "403":
@@ -1655,11 +1599,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.SniesArea'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - snies_area
@@ -1691,7 +1633,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.SniesArea'
         "403":
@@ -1715,7 +1656,6 @@ paths:
           $ref: '#/definitions/models.SniesArea'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.SniesArea'
         "403":
@@ -1770,11 +1710,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.SniesNucleoBasico'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - snies_nucleo_basico
@@ -1806,7 +1744,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.SniesNucleoBasico'
         "403":
@@ -1830,7 +1767,6 @@ paths:
           $ref: '#/definitions/models.SniesNucleoBasico'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.SniesNucleoBasico'
         "403":
@@ -1885,11 +1821,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.Sucursal'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - sucursal
@@ -1921,7 +1855,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.Sucursal'
         "403":
@@ -1945,7 +1878,6 @@ paths:
           $ref: '#/definitions/models.Sucursal'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.Sucursal'
         "403":
@@ -2000,11 +1932,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.TipoDocumento'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - tipo_documento
@@ -2036,7 +1966,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.TipoDocumento'
         "403":
@@ -2060,7 +1989,6 @@ paths:
           $ref: '#/definitions/models.TipoDocumento'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.TipoDocumento'
         "403":
@@ -2115,11 +2043,9 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.Tipo_entidad'
-        "403":
-          description: ""
+        "403": {}
     post:
       tags:
       - tipo_entidad
@@ -2151,7 +2077,6 @@ paths:
         type: string
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.Tipo_entidad'
         "403":
@@ -2175,7 +2100,6 @@ paths:
           $ref: '#/definitions/models.Tipo_entidad'
       responses:
         "200":
-          description: ""
           schema:
             $ref: '#/definitions/models.Tipo_entidad'
         "403":
