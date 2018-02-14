@@ -3560,6 +3560,9 @@
                     "type": "integer",
                     "format": "int64"
                 },
+                "IdArea": {
+                    "$ref": "#/definitions/models.SniesArea"
+                },
                 "Nombre": {
                     "type": "string"
                 }

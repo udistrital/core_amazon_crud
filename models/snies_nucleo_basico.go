@@ -10,10 +10,11 @@ import (
 )
 
 type SniesNucleoBasico struct {
-	Id          int `orm:"column(id_area);pk"`
-	Nombre      string `orm:"column(nombre)"`
-	Descripcion string 	`orm:"column(descripcion)"`
-	Estado      string `orm:"column(estado)"`
+	Id          int        `orm:"column(id_nucleo);pk"`
+	Nombre      string     `orm:"column(nombre)"`
+	Descripcion string     `orm:"column(descripcion)"`
+	Estado      string     `orm:"column(estado)"`
+	IdArea      *SniesArea `orm:"column(id_area);rel(fk)"`
 }
 
 func init() {
@@ -44,7 +45,7 @@ func GetSniesNucleoBasicoById(id int) (v *SniesNucleoBasico, err error) {
 func GetAllSniesNucleoBasico(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
-	qs := o.QueryTable(new(SniesNucleoBasico))
+	qs := o.QueryTable(new(SniesNucleoBasico)).RelatedSel(5)
 	// query k=v
 	for k, v := range query {
 		// rewrite dot-notation to Object__Attribute
