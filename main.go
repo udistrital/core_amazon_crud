@@ -7,11 +7,14 @@ import (
 	_ "github.com/lib/pq"
 	_ "github.com/udistrital/core_amazon_crud/routers"
 	"github.com/udistrital/utils_oas/apiStatusLib"
+	"fmt"
 	
 )
 
 func init() {
-	orm.RegisterDataBase("default", "postgres", "postgres://"+beego.AppConfig.String("PGuser")+":"+beego.AppConfig.String("PGpass")+"@"+beego.AppConfig.String("PGurls")+"/"+beego.AppConfig.String("PGdb")+"?sslmode=disable&search_path="+beego.AppConfig.String("PGschemas")+"")
+	if err:=orm.RegisterDataBase("default", "postgres", "postgres://"+beego.AppConfig.String("PGuser")+":"+beego.AppConfig.String("PGpass")+"@"+beego.AppConfig.String("PGurls")+"/"+beego.AppConfig.String("PGdb")+"?sslmode=disable&search_path="+beego.AppConfig.String("PGschemas")+""); err != nil {
+		fmt.Println(err)
+	}
 }
 
 func main() {

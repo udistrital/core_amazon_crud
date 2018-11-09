@@ -31,13 +31,17 @@ func (c *CiiuClaseController) URLMapping() {
 // @router / [post]
 func (c *CiiuClaseController) Post() {
 	var v models.CiiuClase
-	json.Unmarshal(c.Ctx.Input.RequestBody, &v)
+	if err:= json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil{
 	if _, err := models.AddCiiuClase(&v); err == nil {
 		c.Ctx.Output.SetStatus(201)
 		c.Data["json"] = v
 	} else {
 		c.Data["json"] = err.Error()
 	}
+}else{
+	c.Data["json"] = err.Error()
+
+}
 	c.ServeJSON()
 }
 
@@ -133,12 +137,16 @@ func (c *CiiuClaseController) GetAll() {
 func (c *CiiuClaseController) Put() {
 	id := c.Ctx.Input.Param(":id")
 	v := models.CiiuClase{Id: id}
-	json.Unmarshal(c.Ctx.Input.RequestBody, &v)
+	if err:= json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
 	if err := models.UpdateCiiuClaseById(&v); err == nil {
 		c.Data["json"] = "OK"
 	} else {
 		c.Data["json"] = err.Error()
 	}
+} else {
+	c.Data["json"] = err.Error()
+
+}
 	c.ServeJSON()
 }
 
