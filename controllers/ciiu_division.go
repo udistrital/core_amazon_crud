@@ -31,13 +31,17 @@ func (c *CiiuDivisionController) URLMapping() {
 // @router / [post]
 func (c *CiiuDivisionController) Post() {
 	var v models.CiiuDivision
-	json.Unmarshal(c.Ctx.Input.RequestBody, &v)
+	if err:=json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
 	if _, err := models.AddCiiuDivision(&v); err == nil {
 		c.Ctx.Output.SetStatus(201)
 		c.Data["json"] = v
 	} else {
 		c.Data["json"] = err.Error()
 	}
+}else{
+	c.Data["json"] = err.Error()
+
+}
 	c.ServeJSON()
 }
 
@@ -133,12 +137,15 @@ func (c *CiiuDivisionController) GetAll() {
 func (c *CiiuDivisionController) Put() {
 	id := c.Ctx.Input.Param(":id")
 	v := models.CiiuDivision{Id: id}
-	json.Unmarshal(c.Ctx.Input.RequestBody, &v)
+	if err := json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
 	if err := models.UpdateCiiuDivisionById(&v); err == nil {
 		c.Data["json"] = "OK"
 	} else {
 		c.Data["json"] = err.Error()
 	}
+}else{
+	c.Data["json"] = err.Error()
+}
 	c.ServeJSON()
 }
 

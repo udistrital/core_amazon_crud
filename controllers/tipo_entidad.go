@@ -33,13 +33,16 @@ func (c *Tipo_entidadController) URLMapping() {
 // @router / [post]
 func (c *Tipo_entidadController) Post() {
 	var v models.Tipo_entidad
-	json.Unmarshal(c.Ctx.Input.RequestBody, &v)
+	if err:= json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
 	if _, err := models.AddTipo_entidad(&v); err == nil {
 		c.Ctx.Output.SetStatus(201)
 		c.Data["json"] = v
 	} else {
 		c.Data["json"] = err.Error()
 	}
+}else {
+	c.Data["json"] = err.Error()
+}
 	c.ServeJSON()
 }
 
@@ -137,12 +140,15 @@ func (c *Tipo_entidadController) Put() {
 	idStr := c.Ctx.Input.Param(":id")
 	id, _ := strconv.Atoi(idStr)
 	v := models.Tipo_entidad{Id: id}
-	json.Unmarshal(c.Ctx.Input.RequestBody, &v)
+	if err:= json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
 	if err := models.UpdateTipo_entidadById(&v); err == nil {
 		c.Data["json"] = "OK"
 	} else {
 		c.Data["json"] = err.Error()
 	}
+} else {
+	c.Data["json"] = err.Error()
+}
 	c.ServeJSON()
 }
 
