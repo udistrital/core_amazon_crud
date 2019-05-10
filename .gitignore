@@ -3,3 +3,5 @@ sonar-project.properties
 .scannerwork/report-task.txt
 report.xml
 coverage.xml
+lastupdate.tmp
+core_amazon_crud
