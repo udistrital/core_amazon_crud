@@ -47,9 +47,9 @@ func GetEntidadAseguradoraById(id int) (v *EntidadAseguradora, err error) {
 	return nil, err
 }
 
-// GetAllEntidad_aseguradora retrieves all EntidadAseguradora matches certain condition. Returns empty list if
+// GetAllEntidadAseguradora retrieves all EntidadAseguradora matches certain condition. Returns empty list if
 // no records exist
-func GetAllEntidad_aseguradora(query map[string]string, fields []string, sortby []string, order []string,
+func GetAllEntidadAseguradora(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
 	qs := o.QueryTable(new(EntidadAseguradora))
@@ -125,9 +125,9 @@ func GetAllEntidad_aseguradora(query map[string]string, fields []string, sortby 
 	return nil, err
 }
 
-// UpdateEntidad_aseguradora updates EntidadAseguradora by Id and returns error if
+// UpdateEntidadAseguradora updates EntidadAseguradora by Id and returns error if
 // the record to be updated doesn't exist
-func UpdateEntidad_aseguradoraById(m *EntidadAseguradora) (err error) {
+func UpdateEntidadAseguradoraById(m *EntidadAseguradora) (err error) {
 	o := orm.NewOrm()
 	v := EntidadAseguradora{Id: m.Id}
 	// ascertain id exists in the database
@@ -140,9 +140,9 @@ func UpdateEntidad_aseguradoraById(m *EntidadAseguradora) (err error) {
 	return
 }
 
-// DeleteEntidad_aseguradora deletes EntidadAseguradora by Id and returns error if
+// DeleteEntidadAseguradora deletes EntidadAseguradora by Id and returns error if
 // the record to be deleted doesn't exist
-func DeleteEntidad_aseguradora(id int) (err error) {
+func DeleteEntidadAseguradora(id int) (err error) {
 	o := orm.NewOrm()
 	v := EntidadAseguradora{Id: id}
 	// ascertain id exists in the database
