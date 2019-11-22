@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
+	"strconv"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
@@ -58,7 +59,18 @@ func (c *EntidadAseguradoraController) Post() {
 // @Failure 404 not found resource
 // @router /:id [get]
 func (c *EntidadAseguradoraController) GetOne() {
-
+	idStr := c.Ctx.Input.Param(":id")
+	id, _ := strconv.Atoi(idStr)
+	v, err := models.GetEntidadAseguradoraById(id)
+	if err != nil {
+		logs.Error(err)
+		//c.Data["development"] = map[string]interface{}{"Code": "000", "Body": err.Error(), "Type": "error"}
+		c.Data["system"] = err
+		c.Abort("404")
+	} else {
+		c.Data["json"] = v
+	}
+	c.ServeJSON()
 }
 
 // GetAll ...
