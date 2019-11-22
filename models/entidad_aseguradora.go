@@ -103,7 +103,7 @@ func GetAllEntidad_aseguradora(query map[string]string, fields []string, sortby 
 	}
 
 	var l []EntidadAseguradora
-	qs = qs.OrderBy(sortFields...).RelatedSel()
+	qs = qs.OrderBy(sortFields...)
 	if _, err = qs.Limit(limit, offset).All(&l, fields...); err == nil {
 		if len(fields) == 0 {
 			for _, v := range l {
@@ -142,7 +142,7 @@ func UpdateEntidad_aseguradoraById(m *EntidadAseguradora) (err error) {
 
 // DeleteEntidad_aseguradora deletes EntidadAseguradora by Id and returns error if
 // the record to be deleted doesn't exist
-func DeleteEntidad_aseguradora(id int64) (err error) {
+func DeleteEntidad_aseguradora(id int) (err error) {
 	o := orm.NewOrm()
 	v := EntidadAseguradora{Id: id}
 	// ascertain id exists in the database
