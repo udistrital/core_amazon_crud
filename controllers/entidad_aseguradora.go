@@ -1,7 +1,11 @@
 package controllers
 
 import (
+	"encoding/json"
+
 	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/logs"
+	"github.com/udistrital/core_amazon_crud/models"
 )
 
 // EntidadAseguradoraController operations for EntidadAseguradora
@@ -26,15 +30,32 @@ func (c *EntidadAseguradoraController) URLMapping() {
 // @Failure 400 the request contains incorrect syntax
 // @router / [post]
 func (c *EntidadAseguradoraController) Post() {
-
+	var v models.EntidadAseguradora
+	if err := json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
+		if _, err := models.AddEntidadAseguradora(&v); err == nil {
+			c.Ctx.Output.SetStatus(201)
+			c.Data["json"] = v
+		} else {
+			logs.Error(err)
+			//c.Data["development"] = map[string]interface{}{"Code": "000", "Body": err.Error(), "Type": "error"}
+			c.Data["system"] = err
+			c.Abort("400")
+		}
+	} else {
+		logs.Error(err)
+		//c.Data["development"] = map[string]interface{}{"Code": "000", "Body": err.Error(), "Type": "error"}
+		c.Data["system"] = err
+		c.Abort("400")
+	}
+	c.ServeJSON()
 }
 
 // GetOne ...
-// @Title GetOne
+// @Title Get One
 // @Description get EntidadAseguradora by id
 // @Param	id		path 	string	true		"The key for staticblock"
 // @Success 200 {object} models.EntidadAseguradora
-// @Failure 403 :id is empty
+// @Failure 404 not found resource
 // @router /:id [get]
 func (c *EntidadAseguradoraController) GetOne() {
 
