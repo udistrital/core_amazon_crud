@@ -128,6 +128,12 @@ func init() {
 				&controllers.EstadoController{},
 			),
 		),
+
+		beego.NSNamespace("/entidad_aseguradora",
+			beego.NSInclude(
+				&controllers.EntidadAseguradoraController{},
+			),
+		),
 	)
 	beego.AddNamespace(ns)
 }

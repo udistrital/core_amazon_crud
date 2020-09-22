@@ -45,9 +45,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Banco'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - banco
@@ -79,6 +81,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Banco'
         "403":
@@ -102,6 +105,7 @@ paths:
           $ref: '#/definitions/models.Banco'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Banco'
         "403":
@@ -156,9 +160,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuClase'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - ciiu_clase
@@ -190,6 +196,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuClase'
         "403":
@@ -213,6 +220,7 @@ paths:
           $ref: '#/definitions/models.CiiuClase'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuClase'
         "403":
@@ -267,9 +275,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuDivision'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - ciiu_division
@@ -301,6 +311,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuDivision'
         "403":
@@ -324,6 +335,7 @@ paths:
           $ref: '#/definitions/models.CiiuDivision'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuDivision'
         "403":
@@ -378,9 +390,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuSubclase'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - ciiu_subclase
@@ -412,6 +426,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuSubclase'
         "403":
@@ -435,6 +450,7 @@ paths:
           $ref: '#/definitions/models.CiiuSubclase'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuSubclase'
         "403":
@@ -489,9 +505,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuTipo'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - ciiu_tipo
@@ -523,6 +541,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuTipo'
         "403":
@@ -546,6 +565,7 @@ paths:
           $ref: '#/definitions/models.CiiuTipo'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.CiiuTipo'
         "403":
@@ -600,9 +620,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Ciudad'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - ciudad
@@ -634,6 +656,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Ciudad'
         "403":
@@ -657,6 +680,7 @@ paths:
           $ref: '#/definitions/models.Ciudad'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Ciudad'
         "403":
@@ -677,6 +701,123 @@ paths:
           description: '{string} delete success!'
         "403":
           description: id is empty
+  /entidad_aseguradora/:
+    get:
+      tags:
+      - entidad_aseguradora
+      description: get EntidadAseguradora
+      operationId: EntidadAseguradoraController.GetAll
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EntidadAseguradora'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - entidad_aseguradora
+      description: create EntidadAseguradora
+      operationId: EntidadAseguradoraController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for EntidadAseguradora content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EntidadAseguradora'
+      responses:
+        "201":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EntidadAseguradora'
+        "400":
+          description: the request contains incorrect syntax
+  /entidad_aseguradora/{id}:
+    get:
+      tags:
+      - entidad_aseguradora
+      description: get EntidadAseguradora by id
+      operationId: EntidadAseguradoraController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EntidadAseguradora'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - entidad_aseguradora
+      description: update the EntidadAseguradora
+      operationId: EntidadAseguradoraController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EntidadAseguradora content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EntidadAseguradora'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EntidadAseguradora'
+        "400":
+          description: the request contains incorrect syntaxt
+    delete:
+      tags:
+      - entidad_aseguradora
+      description: delete the EntidadAseguradora
+      operationId: EntidadAseguradoraController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
   /estado/:
     get:
       tags:
@@ -711,9 +852,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Estado'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - estado
@@ -745,6 +888,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Estado'
         "403":
@@ -768,6 +912,7 @@ paths:
           $ref: '#/definitions/models.Estado'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Estado'
         "403":
@@ -822,9 +967,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.JefeDependencia'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - jefe_dependencia
@@ -856,6 +1003,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.JefeDependencia'
         "403":
@@ -879,6 +1027,7 @@ paths:
           $ref: '#/definitions/models.JefeDependencia'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.JefeDependencia'
         "403":
@@ -933,9 +1082,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.OrdenadorGasto'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - ordenador_gasto
@@ -967,6 +1118,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.OrdenadorGasto'
         "403":
@@ -990,6 +1142,7 @@ paths:
           $ref: '#/definitions/models.OrdenadorGasto'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.OrdenadorGasto'
         "403":
@@ -1044,9 +1197,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.ParametroEntidad'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - parametro_entidad
@@ -1078,6 +1233,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.ParametroEntidad'
         "403":
@@ -1101,6 +1257,7 @@ paths:
           $ref: '#/definitions/models.ParametroEntidad'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.ParametroEntidad'
         "403":
@@ -1155,9 +1312,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.PuntoSalarial'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - punto_salarial
@@ -1189,6 +1348,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.PuntoSalarial'
         "403":
@@ -1212,6 +1372,7 @@ paths:
           $ref: '#/definitions/models.PuntoSalarial'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.PuntoSalarial'
         "403":
@@ -1266,9 +1427,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.RubrosDependencia'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - rubros_dependencia
@@ -1300,6 +1463,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.RubrosDependencia'
         "403":
@@ -1323,6 +1487,7 @@ paths:
           $ref: '#/definitions/models.RubrosDependencia'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.RubrosDependencia'
         "403":
@@ -1377,9 +1542,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.RubrosOrdenador'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - rubros_ordenador
@@ -1411,6 +1578,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.RubrosOrdenador'
         "403":
@@ -1434,6 +1602,7 @@ paths:
           $ref: '#/definitions/models.RubrosOrdenador'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.RubrosOrdenador'
         "403":
@@ -1488,9 +1657,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SalarioMinimo'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - salario_minimo
@@ -1522,6 +1693,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SalarioMinimo'
         "403":
@@ -1545,6 +1717,7 @@ paths:
           $ref: '#/definitions/models.SalarioMinimo'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SalarioMinimo'
         "403":
@@ -1599,9 +1772,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SniesArea'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - snies_area
@@ -1633,6 +1808,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SniesArea'
         "403":
@@ -1656,6 +1832,7 @@ paths:
           $ref: '#/definitions/models.SniesArea'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SniesArea'
         "403":
@@ -1710,9 +1887,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SniesNucleoBasico'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - snies_nucleo_basico
@@ -1744,6 +1923,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SniesNucleoBasico'
         "403":
@@ -1767,6 +1947,7 @@ paths:
           $ref: '#/definitions/models.SniesNucleoBasico'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.SniesNucleoBasico'
         "403":
@@ -1821,9 +2002,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Sucursal'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - sucursal
@@ -1855,6 +2038,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Sucursal'
         "403":
@@ -1878,6 +2062,7 @@ paths:
           $ref: '#/definitions/models.Sucursal'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Sucursal'
         "403":
@@ -1932,9 +2117,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.TipoDocumento'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - tipo_documento
@@ -1966,6 +2153,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.TipoDocumento'
         "403":
@@ -1989,6 +2177,7 @@ paths:
           $ref: '#/definitions/models.TipoDocumento'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.TipoDocumento'
         "403":
@@ -2043,9 +2232,11 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Tipo_entidad'
-        "403": {}
+        "403":
+          description: ""
     post:
       tags:
       - tipo_entidad
@@ -2077,6 +2268,7 @@ paths:
         type: string
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Tipo_entidad'
         "403":
@@ -2100,6 +2292,7 @@ paths:
           $ref: '#/definitions/models.Tipo_entidad'
       responses:
         "200":
+          description: ""
           schema:
             $ref: '#/definitions/models.Tipo_entidad'
         "403":
@@ -2213,6 +2406,30 @@ definitions:
       Poblacion:
         type: integer
         format: int64
+  models.EntidadAseguradora:
+    title: EntidadAseguradora
+    type: object
+    properties:
+      Ciudad:
+        type: integer
+        format: int64
+      Codigo:
+        type: integer
+        format: int64
+      Direccion:
+        type: string
+      Estado:
+        type: boolean
+      Id:
+        type: integer
+        format: int64
+      Nit:
+        type: string
+      Nombre:
+        type: string
+      Telefono:
+        type: number
+        format: double
   models.Estado:
     title: Estado
     type: object
@@ -2233,10 +2450,10 @@ definitions:
         format: int64
       FechaFin:
         type: string
-        format: string
+        format: datetime
       FechaInicio:
         type: string
-        format: string
+        format: datetime
       Id:
         type: integer
         format: int64
@@ -2263,10 +2480,10 @@ definitions:
         type: string
       FechaCreacion:
         type: string
-        format: string
+        format: datetime
       FechaModificacion:
         type: string
-        format: string
+        format: datetime
       Id:
         type: integer
         format: int64
@@ -2286,7 +2503,7 @@ definitions:
         type: string
       FechaRegistro:
         type: string
-        format: string
+        format: datetime
       Id:
         type: integer
         format: int64
@@ -2465,3 +2682,6 @@ tags:
 - name: estado
   description: |
     EstadoController operations for Estado
+- name: entidad_aseguradora
+  description: |
+    EntidadAseguradoraController operations for EntidadAseguradora
