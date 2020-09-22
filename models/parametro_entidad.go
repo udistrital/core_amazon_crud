@@ -18,7 +18,7 @@ type ParametroEntidad struct {
 	IdTipoEntidad         *Tipo_entidad `orm:"column(id_tipo_entidad);rel(fk)"`
 	IdEstado              *Estado       `orm:"column(id_estado);rel(fk)"`
 	FechaModificacion     time.Time     `orm:"column(fecha_modificacion);type(date);null"`
-	CodigoMinisterioSalud string        `orm:"column(codigo_ministerio_salud);null"`
+	Codigo 								string        `orm:"column(codigo);null"`
 }
 
 func (t *ParametroEntidad) TableName() string {

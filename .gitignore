@@ -1,2 +1,10 @@
 lastupdate.tmp
 core_amazon_crud
+sonar-project.properties
+.scannerwork/.sonar_lock
+.scannerwork/report-task.txt
+report.xml
+coverage.xml
+lastupdate.tmp
+core_amazon_crud
+
