@@ -48,25 +48,25 @@ steps:
     - push
 
 - name: go_build
-  image: golang:1.14
+  image: golang:1.19.1
   commands:
   - go get -t
   - GOOS=linux GOARCH=amd64 go build -o main
   when:
     branch:
     - develop
+    - feature/*
     - release/*
     - master
     event:
     - push
 
 - name: go_run_test
-  image: golang:1.14
+  image: golang:1.19.1
   commands:
   - go get -t
   - go get github.com/smartystreets/goconvey/convey
-  - go get -u gopkg.in/alecthomas/gometalinter.v1
-  - gometalinter.v1 --install
+  - curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.41.1
   - go get github.com/axw/gocov/...
   - go get github.com/AlekSi/gocov-xml
   - go get -u github.com/jstemmer/go-junit-report
@@ -76,6 +76,7 @@ steps:
   when:
     branch:
     - develop
+    - feature/*
     - release/*
     - master
     event:
@@ -90,7 +91,7 @@ steps:
       from_secret: SONAR_TOKEN
 
 # - name: beego_migrate
-#   image: golang:1.14
+#   image: golang:1.19.1
 #   environment:
 #     PG_MIGRATION_USER:
 #       from_secret: PG_MIGRATION_USER
@@ -111,7 +112,7 @@ steps:
 #     - push
 
 # - name: beego_rollback
-#   image: golang:1.14
+#   image: golang:1.19.1
 #   environment:
 #     PG_MIGRATION_USER:
 #       from_secret: PG_MIGRATION_USER
@@ -148,7 +149,7 @@ steps:
     - master
 
 - name: update_aws_ecs
-  image: golang:1.9
+  image: golang:1.19.1
   environment:
     AWS_ACCESS_KEY_ID:
       from_secret: AWS_ACCESS_KEY_ID
