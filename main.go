@@ -2,13 +2,13 @@ package main
 
 import (
 	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/logs"
 	"github.com/astaxie/beego/orm"
 	"github.com/astaxie/beego/plugins/cors"
-	"github.com/astaxie/beego/logs"
 	_ "github.com/lib/pq"
 	_ "github.com/udistrital/core_amazon_crud/routers"
-	"github.com/udistrital/utils_oas/apiStatusLib"
-	
+	apistatus "github.com/udistrital/utils_oas/apiStatusLib"
+	"github.com/udistrital/utils_oas/xray"
 )
 
 func init() {
@@ -35,7 +35,7 @@ func main() {
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 	}))
-	
+	xray.InitXRay()
 	logs.SetLogger(logs.AdapterFile, `{"filename":"/var/log/beego/core_amazon_crud.log"}`)
 	apistatus.Init()
 	beego.Run()
