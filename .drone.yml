@@ -48,20 +48,21 @@ steps:
     - push
 
 - name: go_build
-  image: golang:1.20
+  image: golang:1.19.1
   commands:
   - go get -t
   - GOOS=linux GOARCH=amd64 go build -o main
   when:
     branch:
     - develop
+    - feature/*
     - release/*
     - master
     event:
     - push
 
 - name: go_run_test
-  image: golang:1.20
+  image: golang:1.19.1
   commands:
   - go get -t
   - go get github.com/smartystreets/goconvey/convey
@@ -76,6 +77,7 @@ steps:
   when:
     branch:
     - develop
+    - feature/*
     - release/*
     - master
     event:
@@ -90,7 +92,7 @@ steps:
       from_secret: SONAR_TOKEN
 
 # - name: beego_migrate
-#   image: golang:1.20
+#   image: golang:1.19.1
 #   environment:
 #     PG_MIGRATION_USER:
 #       from_secret: PG_MIGRATION_USER
@@ -111,7 +113,7 @@ steps:
 #     - push
 
 # - name: beego_rollback
-#   image: golang:1.20
+#   image: golang:1.19.1
 #   environment:
 #     PG_MIGRATION_USER:
 #       from_secret: PG_MIGRATION_USER
@@ -148,7 +150,7 @@ steps:
     - master
 
 - name: update_aws_ecs
-  image: golang:1.20
+  image: golang:1.19.1
   environment:
     AWS_ACCESS_KEY_ID:
       from_secret: AWS_ACCESS_KEY_ID
