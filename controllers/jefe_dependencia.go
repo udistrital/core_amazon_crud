@@ -1,13 +1,13 @@
 package controllers
 
 import (
-	"github.com/udistrital/core_amazon_crud/models"
 	"encoding/json"
 	"errors"
 	"strconv"
 	"strings"
 
 	"github.com/astaxie/beego"
+	"github.com/udistrital/core_amazon_crud/models"
 )
 
 // JefeDependenciaController oprations for JefeDependencia
@@ -84,7 +84,6 @@ func (c *JefeDependenciaController) GetAll() {
 	var query = make(map[string]string)
 	var limit int64 = 10
 	var offset int64
-
 	// fields: col1,col2,entity.col3
 	if v := c.GetString("fields"); v != "" {
 		fields = strings.Split(v, ",")
