@@ -1,10 +1,17 @@
 lastupdate.tmp
-core_amazon_crud
-sonar-project.properties
-.scannerwork/.sonar_lock
-.scannerwork/report-task.txt
-report.xml
-coverage.xml
-lastupdate.tmp
-core_amazon_crud
+oikos_api
+.vscode/
+main
+.scannerwork/
+swagger/*.png
+swagger/*.html
+swagger/*.js
+swagger/*.map
+swagger/*.css
+swagger/*.yml
+swagger/css/
+swagger/fonts/
+swagger/images/
+swagger/lang/
+swagger/lib/
 
