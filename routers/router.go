@@ -134,6 +134,16 @@ func init() {
 				&controllers.EntidadAseguradoraController{},
 			),
 		),
+		beego.NSNamespace("/tipo_documento_cobro",
+			beego.NSInclude(
+				&controllers.TipoDocumentoCobroController{},
+			),
+		),
+		beego.NSNamespace("/tipo_cuenta_bancaria",
+			beego.NSInclude(
+				&controllers.TipoCuentaBancariaController{},
+			),
+		),
 	)
 	beego.AddNamespace(ns)
 }
