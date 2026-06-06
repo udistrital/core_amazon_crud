@@ -10,7 +10,7 @@ import (
 )
 
 type CiiuTipo struct {
-	Id     string    `orm:"column(id_tipo);pk"`
+	Id     string `orm:"column(id_tipo);pk"`
 	Nombre string `orm:"column(nombre)"`
 }
 

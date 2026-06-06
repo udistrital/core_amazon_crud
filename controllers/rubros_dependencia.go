@@ -1,11 +1,12 @@
 package controllers
 
 import (
-	"github.com/udistrital/core_amazon_crud/models"
 	"encoding/json"
 	"errors"
 	"strconv"
 	"strings"
+
+	"github.com/udistrital/core_amazon_crud/models"
 
 	"github.com/astaxie/beego"
 )
