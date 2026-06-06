@@ -1,13 +1,13 @@
 package controllers
 
 import (
-	"github.com/udistrital/core_amazon_crud/models"
 	"encoding/json"
 	"errors"
 	"strconv"
 	"strings"
 
 	"github.com/astaxie/beego"
+	"github.com/udistrital/core_amazon_crud/models"
 )
 
 // PuntoSalarialController oprations for PuntoSalarial

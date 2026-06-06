@@ -11,14 +11,14 @@ import (
 )
 
 type ParametroEntidad struct {
-	Id                    int           `orm:"column(id);pk"`
-	Nit                   string        `orm:"column(nit);null"`
-	Nombre                string        `orm:"column(nombre)"`
-	FechaCreacion         time.Time     `orm:"column(fecha_creacion);type(date)"`
-	IdTipoEntidad         *Tipo_entidad `orm:"column(id_tipo_entidad);rel(fk)"`
-	IdEstado              *Estado       `orm:"column(id_estado);rel(fk)"`
-	FechaModificacion     time.Time     `orm:"column(fecha_modificacion);type(date);null"`
-	Codigo 								string        `orm:"column(codigo);null"`
+	Id                int           `orm:"column(id);pk"`
+	Nit               string        `orm:"column(nit);null"`
+	Nombre            string        `orm:"column(nombre)"`
+	FechaCreacion     time.Time     `orm:"column(fecha_creacion);type(date)"`
+	IdTipoEntidad     *Tipo_entidad `orm:"column(id_tipo_entidad);rel(fk)"`
+	IdEstado          *Estado       `orm:"column(id_estado);rel(fk)"`
+	FechaModificacion time.Time     `orm:"column(fecha_modificacion);type(date);null"`
+	Codigo            string        `orm:"column(codigo);null"`
 }
 
 func (t *ParametroEntidad) TableName() string {

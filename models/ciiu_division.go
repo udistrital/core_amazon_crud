@@ -10,9 +10,9 @@ import (
 )
 
 type CiiuDivision struct {
-	Id         string `orm:"column(id_division);pk"`
-	Tipo       string `orm:"column(tipo)"`
-	Nombre     string `orm:"column(nombre)"`
+	Id     string `orm:"column(id_division);pk"`
+	Tipo   string `orm:"column(tipo)"`
+	Nombre string `orm:"column(nombre)"`
 }
 
 func init() {

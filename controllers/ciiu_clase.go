@@ -3,12 +3,13 @@ package controllers
 import (
 	"encoding/json"
 	"errors"
-	"github.com/udistrital/core_amazon_crud/models"
 	"strings"
+
 	"github.com/astaxie/beego"
+	"github.com/udistrital/core_amazon_crud/models"
 )
 
-//  CiiuClaseController operations for CiiuClase
+// CiiuClaseController operations for CiiuClase
 type CiiuClaseController struct {
 	beego.Controller
 }
