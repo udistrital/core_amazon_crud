@@ -5,13 +5,14 @@ import (
 	"fmt"
 	"reflect"
 	"strings"
+
 	"github.com/astaxie/beego/orm"
 )
 
 type CiiuClase struct {
 	Division string `orm:"column(division)"`
 	Id       string `orm:"column(id_clase);pk"`
-	Nombre   string `orm:"column(nombre)`
+	Nombre   string `orm:"column(nombre)"`
 }
 
 func init() {

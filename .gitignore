@@ -1,19 +1,9 @@
 lastupdate.tmp
-oikos_api
 .vscode/
-main
-.scannerwork/
-swagger/*.png
-swagger/*.html
-swagger/*.js
-swagger/*.map
-swagger/*.css
-swagger/*.yml
-swagger/css/
-swagger/fonts/
-swagger/images/
-swagger/lang/
-swagger/lib/
-go.mod
-go.sum
 
+main
+core_amazon_crud
+
+swagger/**
+!swagger/swagger.json
+!swagger/swagger.yml

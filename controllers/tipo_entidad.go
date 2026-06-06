@@ -3,14 +3,15 @@ package controllers
 import (
 	"encoding/json"
 	"errors"
-	"github.com/udistrital/core_amazon_crud/models"
 	"strconv"
 	"strings"
+
+	"github.com/udistrital/core_amazon_crud/models"
 
 	"github.com/astaxie/beego"
 )
 
-//  Tipo_entidadController operations for Tipo_entidad
+// Tipo_entidadController operations for Tipo_entidad
 type Tipo_entidadController struct {
 	beego.Controller
 }
@@ -155,7 +156,7 @@ func (c *Tipo_entidadController) Put() {
 // @router /:id [delete]
 func (c *Tipo_entidadController) Delete() {
 	idStr := c.Ctx.Input.Param(":id")
-id, _ := strconv.Atoi(idStr)
+	id, _ := strconv.Atoi(idStr)
 	if err := models.DeleteTipo_entidad(id); err == nil {
 		c.Data["json"] = "OK"
 	} else {

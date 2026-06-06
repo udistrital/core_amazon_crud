@@ -3,14 +3,15 @@ package controllers
 import (
 	"encoding/json"
 	"errors"
-	"github.com/udistrital/core_amazon_crud/models"
 	"strconv"
 	"strings"
+
+	"github.com/udistrital/core_amazon_crud/models"
 
 	"github.com/astaxie/beego"
 )
 
-//  SniesAreaController operations for SniesArea
+// SniesAreaController operations for SniesArea
 type SniesAreaController struct {
 	beego.Controller
 }
